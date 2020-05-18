@@ -103,9 +103,11 @@ function checkMessages() {
         title = "There is one warning. Click for further details.";
       }
 
-      $("#pihole-diagnosis").prop("title", title);
+      var diagnosisEl = $("#pihole-diagnosis");
+
+      diagnosisEl.prop("title", title);
       $("#pihole-diagnosis-count").text(data.message_count);
-      $("#pihole-diagnosis").removeClass("d-none");
+      diagnosisEl.removeClass("d-none");
     }
   });
 }
