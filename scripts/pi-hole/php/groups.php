@@ -25,13 +25,13 @@ $db = SQLite3_connect($GRAVITYDB, SQLITE3_OPEN_READWRITE);
 
 function JSON_success($message = null)
 {
-    header('Content-type: application/json');
+    header('Content-type: application/json; charset=utf-8');
     echo json_encode(array('success' => true, 'message' => $message));
 }
 
 function JSON_error($message = null)
 {
-    header('Content-type: application/json');
+    header('Content-type: application/json; charset=utf-8');
     $response = array('success' => false, 'message' => $message);
     if (isset($_POST['action'])) {
         array_push($response, array('action' => $_POST['action']));

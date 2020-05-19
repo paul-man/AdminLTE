@@ -7,7 +7,7 @@
 *    Please see LICENSE file for your rights under this license */
 
 $api = true;
-header('Content-type: application/json');
+header('Content-type: application/json; charset=utf-8');
 require("scripts/pi-hole/php/FTL.php");
 require("scripts/pi-hole/php/password.php");
 require("scripts/pi-hole/php/auth.php");
