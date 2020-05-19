@@ -5,8 +5,8 @@
  *  This file is copyright under the latest version of the EUPL.
  *  Please see LICENSE file for your rights under this license. */
 
-//The following functions allow us to display time until pi-hole is enabled after disabling.
-//Works between all pages
+// The following functions allow us to display time until pi-hole is enabled after disabling.
+// Works between all pages
 
 function secondsTimeSpanToHMS(s) {
   var h = Math.floor(s / 3600); //Get whole hours
@@ -17,22 +17,22 @@ function secondsTimeSpanToHMS(s) {
 }
 
 function piholeChanged(action) {
-  var status = $("#status");
-  var ena = $("#pihole-enable");
-  var dis = $("#pihole-disable");
+  var status = document.getElementById("status");
+  var piholeEnable = document.getElementById("pihole-enable");
+  var piholeDisable = document.getElementById("pihole-disable");
 
   switch (action) {
     case "enabled":
-      status.html("<i class='fa fa-circle text-green-light'></i> Active");
-      ena.hide();
-      dis.show();
-      dis.removeClass("active");
+      status.innerHTML = '<i class="fa fa-circle text-green-light"></i> Active';
+      piholeEnable.style.display = "none";
+      piholeDisable.style.display = "";
+      piholeDisable.classList.remove("active");
       break;
 
     case "disabled":
-      status.html("<i class='fa fa-circle text-red'></i> Offline");
-      ena.show();
-      dis.hide();
+      status.innerHTML = '<i class="fa fa-circle text-red"></i> Offline';
+      piholeEnable.style.display = "";
+      piholeDisable.style.display = "none";
       break;
 
     default:
@@ -41,47 +41,47 @@ function piholeChanged(action) {
 }
 
 function countDown() {
-  var ena = $("#enableLabel");
-  var enaT = $("#enableTimer");
-  var target = new Date(parseInt(enaT.html()));
+  var piholeEnableLabel = document.getElementById("enableLabel");
+  var piholeEnableTimer = document.getElementById("enableTimer");
+  var target = new Date(parseInt(piholeEnableTimer.innerHTML, 10));
   var seconds = Math.round((target.getTime() - new Date().getTime()) / 1000);
 
   if (seconds > 0) {
     setTimeout(countDown, 1000);
-    ena.text("Enable (" + secondsTimeSpanToHMS(seconds) + ")");
+    piholeEnableLabel.textContent = "Enable (" + secondsTimeSpanToHMS(seconds) + ")";
   } else {
-    ena.text("Enable");
+    piholeEnableLabel.textContent = "Enable";
     piholeChanged("enabled");
     localStorage.removeItem("countDownTarget");
   }
 }
 
 function piholeChange(action, duration) {
-  var token = encodeURIComponent($("#token").text());
-  var enaT = $("#enableTimer");
+  var token = encodeURIComponent(document.getElementById("token").textContent);
+  var piholeEnableTimer = document.getElementById("enableTimer");
   var btnStatus;
 
   switch (action) {
     case "enable":
-      btnStatus = $("#flip-status-enable");
-      btnStatus.html("<i class='fa fa-spinner'> </i>");
+      btnStatus = document.getElementById("flip-status-enable");
+      btnStatus.innerHTML = '<i class="fa fa-spinner"></i>';
       $.getJSON("api.php?enable&token=" + token, function (data) {
         if (data.status === "enabled") {
-          btnStatus.html("");
+          btnStatus.innerHTML = "";
           piholeChanged("enabled");
         }
       });
       break;
 
     case "disable":
-      btnStatus = $("#flip-status-disable");
-      btnStatus.html("<i class='fa fa-spinner'> </i>");
+      btnStatus = document.getElementById("flip-status-disable");
+      btnStatus.innerHTML = '<i class="fa fa-spinner"></i>';
       $.getJSON("api.php?disable=" + duration + "&token=" + token, function (data) {
         if (data.status === "disabled") {
-          btnStatus.html("");
+          btnStatus.innerHTML = "";
           piholeChanged("disabled");
           if (duration > 0) {
-            enaT.html(new Date().getTime() + duration * 1000);
+            piholeEnableTimer.textContent = new Date().getTime() + duration * 1000;
             setTimeout(countDown, 100);
           }
         }
@@ -103,71 +103,50 @@ function checkMessages() {
         title = "There is one warning. Click for further details.";
       }
 
-      var diagnosisEl = $("#pihole-diagnosis");
+      var diagnosisEl = document.getElementById("pihole-diagnosis");
 
-      diagnosisEl.prop("title", title);
-      $("#pihole-diagnosis-count").text(data.message_count);
-      diagnosisEl.removeClass("d-none");
+      diagnosisEl.title = title;
+      document.getElementById("pihole-diagnosis-count").textContent = data.message_count;
+      diagnosisEl.classList.remove("d-none");
     }
   });
 }
 
-$(document).ready(function () {
-  var enaT = $("#enableTimer");
-  var target = new Date(parseInt(enaT.html()));
-  var seconds = Math.round((target.getTime() - new Date().getTime()) / 1000);
-  if (seconds > 0) {
-    setTimeout(countDown, 100);
-  }
-
-  if (!testCookies() && $("#cookieInfo").length > 0) {
-    $("#cookieInfo").show();
-  }
-
-  var checkboxTheme = $("#checkbox_theme").text();
-  $("input").icheck({
-    checkboxClass: "icheckbox_" + checkboxTheme,
-    radioClass: "iradio_" + checkboxTheme,
-    increaseArea: "20%"
-  });
-  // Run check immediately after page loading ...
-  checkMessages();
-  // ... and once again with five seconds delay
-  setTimeout(checkMessages, 5000);
-});
-
 // Handle Enable/Disable
-$("#pihole-enable").on("click", function (e) {
+document.getElementById("pihole-enable").addEventListener("click", function (e) {
   e.preventDefault();
   localStorage.removeItem("countDownTarget");
   piholeChange("enable", "");
 });
-$("#pihole-disable-permanently").on("click", function (e) {
+
+document.getElementById("pihole-disable-permanently").addEventListener("click", function (e) {
   e.preventDefault();
   piholeChange("disable", "0");
 });
-$("#pihole-disable-10s").on("click", function (e) {
+document.getElementById("pihole-disable-10s").addEventListener("click", function (e) {
   e.preventDefault();
   piholeChange("disable", "10");
 });
-$("#pihole-disable-30s").on("click", function (e) {
+document.getElementById("pihole-disable-30s").addEventListener("click", function (e) {
   e.preventDefault();
   piholeChange("disable", "30");
 });
-$("#pihole-disable-5m").on("click", function (e) {
+document.getElementById("pihole-disable-5m").addEventListener("click", function (e) {
   e.preventDefault();
   piholeChange("disable", "300");
 });
-$("#pihole-disable-custom").on("click", function (e) {
+document.getElementById("pihole-disable-custom").addEventListener("click", function (e) {
   e.preventDefault();
-  var custVal = $("#customTimeout").val();
-  custVal = $("#btnMins").hasClass("active") ? custVal * 60 : custVal;
+  var custVal = document.getElementById("customTimeout").value;
+  custVal = document.getElementById("btnMins").classList.contains("active")
+    ? custVal * 60
+    : custVal;
   piholeChange("disable", custVal);
 });
 
 // Session timer
 var sessionTimerCounter = document.getElementById("sessiontimercounter");
-var sessionvalidity = parseInt(sessionTimerCounter.textContent);
+var sessionvalidity = parseInt(sessionTimerCounter.textContent, 10);
 var start = new Date();
 
 function updateSessionTimer() {
@@ -203,11 +182,26 @@ if (sessionvalidity > 0) {
 }
 
 // Handle Strg + Enter button on Login page
-$(document).keypress(function (e) {
-  if ((e.keyCode === 10 || e.keyCode === 13) && e.ctrlKey && $("#loginpw").is(":focus")) {
-    $("#loginform").attr("action", "settings.php");
-    $("#loginform").submit();
+document.addEventListener("keydown", function (e) {
+  var loginForm = document.getElementById("loginform");
+
+  if (!loginForm) {
+    return;
   }
+
+  loginForm.addEventListener(
+    "focus",
+    function () {
+      if (
+        (e.code === "Enter" || e.code === "NumpadEnter") &&
+        (e.code === "ControlLeft" || e.code === "ControlRight")
+      ) {
+        loginForm.setAttribute("action", "settings.php");
+        loginForm.submit();
+      }
+    },
+    true
+  );
 });
 
 function testCookies() {
@@ -225,8 +219,32 @@ function testCookies() {
   return ret;
 }
 
+// The only function that runs on `$(document).ready()`
 $(function () {
-  if (!testCookies() && $("#cookieInfo").length > 0) {
-    $("#cookieInfo").show();
+  var piholeEnableTimer = document.getElementById("enableTimer");
+  var target = new Date(parseInt(piholeEnableTimer.innerHTML, 10));
+  var seconds = Math.round((target.getTime() - new Date().getTime()) / 1000);
+
+  if (seconds > 0) {
+    setTimeout(countDown, 100);
   }
+
+  var cookieInfo = document.getElementById("cookieInfo");
+
+  if (!testCookies() && cookieInfo.length > 0) {
+    cookieInfo.style.display = "";
+  }
+
+  var checkboxTheme = document.getElementById("checkbox_theme").textContent;
+
+  $("input").icheck({
+    checkboxClass: "icheckbox_" + checkboxTheme,
+    radioClass: "iradio_" + checkboxTheme,
+    increaseArea: "20%"
+  });
+
+  // Run check immediately after page loading ...
+  checkMessages();
+  // ... and once again with five seconds delay
+  setTimeout(checkMessages, 5000);
 });
