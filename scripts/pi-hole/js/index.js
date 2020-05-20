@@ -321,7 +321,6 @@ function updateQueryTypesPie() {
     queryTypePieChart.data.datasets[0] = dd;
     queryTypePieChart.data.labels = k;
     $("#query-types-pie .overlay").hide();
-    queryTypePieChart.update();
     queryTypePieChart.chart.config.options.cutoutPercentage = 50;
     queryTypePieChart.update();
     // Don't use rotation animation for further updates
@@ -491,7 +490,6 @@ function updateForwardDestinationsPie() {
     forwardDestinationPieChart.data.datasets[0] = dd;
     // and push it at once
     $("#forward-destinations-pie .overlay").hide();
-    forwardDestinationPieChart.update();
     forwardDestinationPieChart.chart.config.options.cutoutPercentage = 50;
     forwardDestinationPieChart.update();
     // Don't use rotation animation for further updates
