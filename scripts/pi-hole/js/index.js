@@ -327,9 +327,26 @@ function updateQueryTypesPie() {
     queryTypePieChart.options.animation.duration = 0;
     // Generate legend in separate div
     $("#query-types-legend").html(queryTypePieChart.generateLegend());
-    $("#query-types-legend > ul > li").on("mousedown", function (e) {
+
+    var chartListElements = $("#query-types-legend > ul > li");
+
+    // Add an `a` tag
+    chartListElements.each(function (i, el) {
+      $(el).html(
+        '<a href="queries.php?querytype=' +
+          (i + 1) +
+          '" title="View ' +
+          $(el).text() +
+          ' queries">' +
+          $(el).html() +
+          "</a>"
+      );
+    });
+
+    $(chartListElements).find("a").on("auxclick", function (e) {
+      // which == 2 is middle mouse button
       if (e.which === 2) {
-        // which == 2 is middle mouse button
+        e.preventDefault();
         $(this).toggleClass("strike");
         var index = $(this).index();
         var ci = e.view.queryTypePieChart;
@@ -342,9 +359,6 @@ function updateQueryTypesPie() {
         }
 
         ci.update();
-      } else if (e.which === 1) {
-        // which == 1 is left mouse button
-        window.open("queries.php?querytype=" + ($(this).index() + 1), "_self");
       }
     });
   }).done(function () {
@@ -496,9 +510,27 @@ function updateForwardDestinationsPie() {
     forwardDestinationPieChart.options.animation.duration = 0;
     // Generate legend in separate div
     $("#forward-destinations-legend").html(forwardDestinationPieChart.generateLegend());
-    $("#forward-destinations-legend > ul > li").on("mousedown", function (e) {
+
+    var chartListElements = $("#forward-destinations-legend > ul > li");
+
+    // Add an `a` tag
+    chartListElements.each(function (i, el) {
+      var text = el.textContent;
+      $(el).html(
+        '<a href="queries.php?forwarddest=' +
+          encodeURIComponent(text) +
+          '" title="View queries answered by ' +
+          text +
+          '">' +
+          $(el).html() +
+          "</a>"
+      );
+    });
+
+    $(chartListElements).find("a").on("auxclick", function (e) {
+      // which == 2 is middle mouse button
       if (e.which === 2) {
-        // which == 2 is middle mouse button
+        e.preventDefault();
         $(this).toggleClass("strike");
         var index = $(this).index();
         var ci = e.view.forwardDestinationPieChart;
@@ -511,10 +543,6 @@ function updateForwardDestinationsPie() {
         }
 
         ci.update();
-      } else if (e.which === 1) {
-        // which == 1 is left mouse button
-        var obj = encodeURIComponent(e.target.textContent);
-        window.open("queries.php?forwarddest=" + obj, "_self");
       }
     });
   }).done(function () {
