@@ -260,13 +260,13 @@ $(document).ready(function () {
           color = "green";
           fieldtext = "OK <br class='hidden-lg'>(forwarded)";
           buttontext =
-            '<button type="button" class="btn btn-default btn-sm text-red"><i class="fa fa-ban"></i> Blacklist</button>';
+            '<button type="button" class="btn btn-default btn-sm text-red"><i class="fas fa-ban"></i> Blacklist</button>';
           break;
         case 3:
           color = "green";
           fieldtext = "OK <br class='hidden-lg'>(cached)";
           buttontext =
-            '<button type="button" class="btn btn-default btn-sm text-red"><i class="fa fa-ban"></i> Blacklist</button>';
+            '<button type="button" class="btn btn-default btn-sm text-red"><i class="fas fa-ban"></i> Blacklist</button>';
           break;
         case 4:
           color = "red";

@@ -35,7 +35,7 @@
             </div>
         </div>
         <div class="overlay">
-          <i class="fa fa-sync fa-spin"></i>
+          <i class="fas fa-sync fa-spin"></i>
         </div>
         <!-- /.box-body -->
       </div>
@@ -63,7 +63,7 @@
             </div>
         </div>
         <div class="overlay">
-          <i class="fa fa-sync fa-spin"></i>
+          <i class="fas fa-sync fa-spin"></i>
         </div>
         <!-- /.box-body -->
       </div>

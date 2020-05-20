@@ -180,14 +180,14 @@ $(document).ready(function () {
           colorClass = "text-green";
           fieldtext = "OK <br class='hidden-lg'>(forwarded)" + dnssecStatus;
           buttontext =
-            '<button type="button" class="btn btn-default btn-sm text-red"><i class="fa fa-ban"></i> Blacklist</button>';
+            '<button type="button" class="btn btn-default btn-sm text-red"><i class="fas fa-ban"></i> Blacklist</button>';
           break;
         case "3":
           blocked = false;
           colorClass = "text-green";
           fieldtext = "OK <br class='hidden-lg'>(cached)" + dnssecStatus;
           buttontext =
-            '<button type="button" class="btn btn-default btn-sm text-red"><i class="fa fa-ban"></i> Blacklist</button>';
+            '<button type="button" class="btn btn-default btn-sm text-red"><i class="fas fa-ban"></i> Blacklist</button>';
           break;
         case "4":
           blocked = true;

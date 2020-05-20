@@ -40,7 +40,7 @@ if (isset($_POST["submit"])) {
     <div id="alDebug" class="alert alert-warning alert-dismissible fade in" role="alert">
         <button type="button" class="close" data-hide="alert" aria-label="Close"><span aria-hidden="true">&times;</span>
         </button>
-        <h4><i class="icon fa fa-exclamation-triangle"></i> Debug</h4>
+        <h4><i class="icon fas fa-exclamation-triangle"></i> Debug</h4>
         <pre><?php print_r($_POST); ?></pre>
     </div>
 <?php } ?>
@@ -49,7 +49,7 @@ if (isset($_POST["submit"])) {
     <div id="alInfo" class="alert alert-info alert-dismissible fade in" role="alert">
         <button type="button" class="close" data-hide="alert" aria-label="Close"><span aria-hidden="true">&times;</span>
         </button>
-        <h4><i class="icon fa fa-info"></i> Info</h4>
+        <h4><i class="icon fas fa-info"></i> Info</h4>
         <?php echo $success; ?>
     </div>
 <?php } ?>
@@ -58,7 +58,7 @@ if (isset($_POST["submit"])) {
     <div id="alError" class="alert alert-danger alert-dismissible fade in" role="alert">
         <button type="button" class="close" data-hide="alert" aria-label="Close"><span aria-hidden="true">&times;</span>
         </button>
-        <h4><i class="icon fa fa-ban"></i> Error</h4>
+        <h4><i class="icon fas fa-ban"></i> Error</h4>
         <?php echo $error; ?>
     </div>
 <?php } ?>

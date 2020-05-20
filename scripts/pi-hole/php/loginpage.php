@@ -19,7 +19,7 @@
       <div id="cookieInfo" class="panel-title text-center text-red" style="font-size: 150%" hidden>Verify that cookies are allowed for <code><?php echo $_SERVER['HTTP_HOST']; ?></code></div>
       <?php if ($wrongpassword) { ?>
         <div class="form-group has-error login-box-msg">
-          <label class="control-label"><i class="fa fa-times-circle"></i> Wrong password!</label>
+          <label class="control-label"><i class="fas fa-times-circle"></i> Wrong password!</label>
         </div>
       <?php } ?>
     </div>
@@ -28,7 +28,7 @@
       <form action="" id="loginform" method="post">
         <div class="form-group has-feedback <?php if ($wrongpassword) { ?>has-error<?php } ?>">
           <input type="password" id="loginpw" name="pw" class="form-control" placeholder="Password" autofocus>
-          <span class="fa fa-key form-control-feedback"></span>
+          <span class="fas fa-key form-control-feedback"></span>
         </div>
         <div class="row">
           <div class="col-xs-8 hidden-xs hidden-sm">
