@@ -40,7 +40,7 @@ if (isset($_POST["submit"])) {
     <div id="alDebug" class="alert alert-warning alert-dismissible fade in" role="alert">
         <button type="button" class="close" data-hide="alert" aria-label="Close"><span aria-hidden="true">&times;</span>
         </button>
-        <h4><i class="icon fas fa-exclamation-triangle"></i> Debug</h4>
+        <h4><i class="icon fa fa-exclamation-triangle"></i> Debug</h4>
         <pre><?php print_r($_POST); ?></pre>
     </div>
 <?php } ?>
@@ -49,7 +49,7 @@ if (isset($_POST["submit"])) {
     <div id="alInfo" class="alert alert-info alert-dismissible fade in" role="alert">
         <button type="button" class="close" data-hide="alert" aria-label="Close"><span aria-hidden="true">&times;</span>
         </button>
-        <h4><i class="icon fas fa-info"></i> Info</h4>
+        <h4><i class="icon fa fa-info"></i> Info</h4>
         <?php echo $success; ?>
     </div>
 <?php } ?>
@@ -58,7 +58,7 @@ if (isset($_POST["submit"])) {
     <div id="alError" class="alert alert-danger alert-dismissible fade in" role="alert">
         <button type="button" class="close" data-hide="alert" aria-label="Close"><span aria-hidden="true">&times;</span>
         </button>
-        <h4><i class="icon fas fa-ban"></i> Error</h4>
+        <h4><i class="icon fa fa-ban"></i> Error</h4>
         <?php echo $error; ?>
     </div>
 <?php } ?>
@@ -718,7 +718,7 @@ if (isset($_GET['tab']) && in_array($_GET['tab'], array("sysadmin", "adlists", "
                                                             <td id="HOST"><?php echo $lease["host"]; ?></td>
                                                             <td>
                                                                 <button type="button" id="button" class="btn btn-warning btn-xs" data-static="alert">
-                                                                    <span class="fas fas fa-file-import"></span>
+                                                                    <span class="fa fa-upload"></span>
                                                                 </button>
                                                             </td>
                                                         </tr>
@@ -748,7 +748,7 @@ if (isset($_GET['tab']) && in_array($_GET['tab'], array("sysadmin", "adlists", "
                                                             <td><?php if (strlen($lease["hwaddr"]) > 0) { ?>
                                                                 <button type="button" class="btn btn-danger btn-xs" name="removestatic"
                                                                         value="<?php echo $lease["hwaddr"]; ?>">
-                                                                    <span class="far fa-trash-alt"></span>
+                                                                    <span class="fa fa-trash-o"></span>
                                                                 </button>
                                                                 <?php } ?>
                                                             </td>
@@ -762,7 +762,7 @@ if (isset($_GET['tab']) && in_array($_GET['tab'], array("sysadmin", "adlists", "
                                                             <td><input type="text" class="form-group" name="AddHostname" value="" autocomplete="off" spellcheck="false" autocapitalize="none" autocorrect="off"></td>
                                                             <td>
                                                                 <button type="submit" class="btn btn-success btn-xs" name="addstatic">
-                                                                    <span class="fas fa-plus"></span>
+                                                                    <span class="fa fa-plus"></span>
                                                                 </button>
                                                             </td>
                                                         </tr>

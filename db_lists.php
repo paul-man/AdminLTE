@@ -38,7 +38,7 @@ $token = $_SESSION['token'];
           <div class="form-group col-md-12">
             <div class="input-group">
               <div class="input-group-addon">
-                <i class="far fa-clock"></i>
+                <i class="fa fa-clock-o"></i>
               </div>
               <input type="button" class="form-control pull-right" id="querytime" value="Click to select date and time range">
             </div>
@@ -84,7 +84,7 @@ else
             </div>
         </div>
         <div class="overlay" hidden>
-          <i class="fas fa-sync fa-spin"></i>
+          <i class="fa fa-sync fa-spin"></i>
         </div>
         <!-- /.box-body -->
       </div>
@@ -111,7 +111,7 @@ else
             </div>
         </div>
         <div class="overlay" hidden>
-          <i class="fas fa-sync fa-spin"></i>
+          <i class="fa fa-sync fa-spin"></i>
         </div>
         <!-- /.box-body -->
       </div>
@@ -138,7 +138,7 @@ else
             </div>
         </div>
         <div class="overlay" hidden>
-          <i class="fas fa-sync fa-spin"></i>
+          <i class="fa fa-sync fa-spin"></i>
         </div>
         <!-- /.box-body -->
       </div>

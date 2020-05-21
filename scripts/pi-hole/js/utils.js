@@ -15,7 +15,7 @@ function showAlert(type, icon, title, message) {
     case "info":
       opts = {
         type: "info",
-        icon: "far fa-clock",
+        icon: "fa fa-clock-o",
         title: title,
         message: message
       };
@@ -38,7 +38,7 @@ function showAlert(type, icon, title, message) {
     case "warning":
       opts = {
         type: "warning",
-        icon: "fas fa-exclamation-triangle",
+        icon: "fa fa-exclamation-triangle",
         title: title,
         message: message
       };
@@ -52,7 +52,7 @@ function showAlert(type, icon, title, message) {
     case "error":
       opts = {
         type: "danger",
-        icon: "fas fa-times",
+        icon: "fa fa-times",
         title: "&nbsp;<strong>Error, something went wrong!</strong><br>",
         message: message
       };

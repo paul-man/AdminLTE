@@ -82,17 +82,17 @@ $(document).ready(function () {
           var lightgreen = parseColor(networkRecent);
           var lightyellow = parseColor(networkOld);
           color = rgbToHex(mixColors(ratio, lightgreen, lightyellow));
-          iconClasses = "fas fa-check";
+          iconClasses = "fa fa-check";
         } else {
           // Last query was longer than 24 hours ago
           // Color: light-orange
           color = networkOlder;
-          iconClasses = "fas fa-question";
+          iconClasses = "fa fa-question";
         }
       } else {
         // This client has never sent a query to Pi-hole, color light-red
         color = networkNever;
-        iconClasses = "fas fa-check";
+        iconClasses = "fa fa-check";
       }
 
       // Set determined background color

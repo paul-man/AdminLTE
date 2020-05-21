@@ -254,31 +254,31 @@ $(document).ready(function () {
           color = "red";
           fieldtext = "Blocked (gravity)";
           buttontext =
-            '<button type="button" class="btn btn-default btn-sm text-green"><i class="fas fa-check"></i> Whitelist</button>';
+            '<button type="button" class="btn btn-default btn-sm text-green"><i class="fa fa-check"></i> Whitelist</button>';
           break;
         case 2:
           color = "green";
           fieldtext = "OK <br class='hidden-lg'>(forwarded)";
           buttontext =
-            '<button type="button" class="btn btn-default btn-sm text-red"><i class="fas fa-ban"></i> Blacklist</button>';
+            '<button type="button" class="btn btn-default btn-sm text-red"><i class="fa fa-ban"></i> Blacklist</button>';
           break;
         case 3:
           color = "green";
           fieldtext = "OK <br class='hidden-lg'>(cached)";
           buttontext =
-            '<button type="button" class="btn btn-default btn-sm text-red"><i class="fas fa-ban"></i> Blacklist</button>';
+            '<button type="button" class="btn btn-default btn-sm text-red"><i class="fa fa-ban"></i> Blacklist</button>';
           break;
         case 4:
           color = "red";
           fieldtext = "Blocked <br class='hidden-lg'>(regex blacklist)";
           buttontext =
-            '<button type="button" class="btn btn-default btn-sm text-green"><i class="fas fa-check"></i> Whitelist</button>';
+            '<button type="button" class="btn btn-default btn-sm text-green"><i class="fa fa-check"></i> Whitelist</button>';
           break;
         case 5:
           color = "red";
           fieldtext = "Blocked <br class='hidden-lg'>(exact blacklist)";
           buttontext =
-            '<button type="button" class="btn btn-default btn-sm text-green"><i class="fas fa-check"></i> Whitelist</button>';
+            '<button type="button" class="btn btn-default btn-sm text-green"><i class="fa fa-check"></i> Whitelist</button>';
           break;
         case 6:
           color = "red";
@@ -299,19 +299,19 @@ $(document).ready(function () {
           color = "red";
           fieldtext = "Blocked (gravity, CNAME)";
           buttontext =
-            '<button type="button" class="btn btn-default btn-sm text-green"><i class="fas fa-check"></i> Whitelist</button>';
+            '<button type="button" class="btn btn-default btn-sm text-green"><i class="fa fa-check"></i> Whitelist</button>';
           break;
         case 10:
           color = "red";
           fieldtext = "Blocked <br class='hidden-lg'>(regex blacklist, CNAME)";
           buttontext =
-            '<button type="button" class="btn btn-default btn-sm text-green"><i class="fas fa-check"></i> Whitelist</button>';
+            '<button type="button" class="btn btn-default btn-sm text-green"><i class="fa fa-check"></i> Whitelist</button>';
           break;
         case 11:
           color = "red";
           fieldtext = "Blocked <br class='hidden-lg'>(exact blacklist, CNAME)";
           buttontext =
-            '<button type="button" class="btn btn-default btn-sm text-green"><i class="fas fa-check"></i> Whitelist</button>';
+            '<button type="button" class="btn btn-default btn-sm text-green"><i class="fa fa-check"></i> Whitelist</button>';
           break;
         default:
           color = "black";

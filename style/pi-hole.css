@@ -239,15 +239,6 @@
     text-decoration: line-through !important;
 }
 
-.fa-paypal-icon {
-    width: 18px;
-    margin-left: 2px;
-}
-
-.sidebar-toggle:before {
-    font-weight: 900;
-    font-family: "Font Awesome 5 Free";
-}
 
 /* Utilities */
 .text-underline {

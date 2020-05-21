@@ -23,14 +23,14 @@ function piholeChanged(action) {
 
   switch (action) {
     case "enabled":
-      status.html("<i class='fas fa-circle text-green-light'></i> Active");
+      status.html("<i class='fa fa-circle text-green-light'></i> Active");
       ena.hide();
       dis.show();
       dis.removeClass("active");
       break;
 
     case "disabled":
-      status.html("<i class='fas fa-circle text-red'></i> Offline");
+      status.html("<i class='fa fa-circle text-red'></i> Offline");
       ena.show();
       dis.hide();
       break;
@@ -64,7 +64,7 @@ function piholeChange(action, duration) {
   switch (action) {
     case "enable":
       btnStatus = $("#flip-status-enable");
-      btnStatus.html("<i class='fas fa-spinner'> </i>");
+      btnStatus.html("<i class='fa fa-spinner'> </i>");
       $.getJSON("api.php?enable&token=" + token, function (data) {
         if (data.status === "enabled") {
           btnStatus.html("");
@@ -75,7 +75,7 @@ function piholeChange(action, duration) {
 
     case "disable":
       btnStatus = $("#flip-status-disable");
-      btnStatus.html("<i class='fas fa-spinner'> </i>");
+      btnStatus.html("<i class='fa fa-spinner'> </i>");
       $.getJSON("api.php?disable=" + duration + "&token=" + token, function (data) {
         if (data.status === "disabled") {
           btnStatus.html("");

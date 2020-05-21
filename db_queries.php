@@ -35,7 +35,7 @@ $token = $_SESSION['token'];
           <div class="form-group col-md-12">
             <div class="input-group">
               <div class="input-group-addon">
-                <i class="far fa-clock"></i>
+                <i class="fa fa-clock-o"></i>
               </div>
               <input type="button" class="form-control pull-right" id="querytime" value="Click to select date and time range">
             </div>
@@ -85,7 +85,7 @@ $token = $_SESSION['token'];
                 <p>Queries Blocked</p>
             </div>
             <div class="icon">
-                <i class="fas fa-hand-paper"></i>
+                <i class="fa fa-hand-paper-o"></i>
             </div>
         </div>
     </div>
@@ -98,7 +98,7 @@ $token = $_SESSION['token'];
                 <p>Queries Blocked (Wildcards)</p>
             </div>
             <div class="icon">
-                <i class="fas fa-hand-paper"></i>
+                <i class="fa fa-hand-paper-o"></i>
             </div>
         </div>
     </div>
@@ -111,7 +111,7 @@ $token = $_SESSION['token'];
                 <p>Queries Total</p>
             </div>
             <div class="icon">
-                <i class="fas fa-globe-americas"></i>
+                <i class="fa fa-globe"></i>
             </div>
         </div>
     </div>
@@ -124,7 +124,7 @@ $token = $_SESSION['token'];
                 <p>Queries Blocked</p>
             </div>
             <div class="icon">
-                <i class="fas fa-chart-pie"></i>
+                <i class="fa fa-pie-chart"></i>
             </div>
         </div>
     </div>

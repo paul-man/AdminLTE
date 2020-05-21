@@ -72,7 +72,7 @@ $(document).ready(function () {
           '<button type="button" class="btn btn-danger btn-xs" id="deleteGroup_' +
           data.id +
           '">' +
-          '<span class="far fa-trash-alt"></span>' +
+          '<span class="fa fa-trash-o"></span>' +
           "</button>";
         $("td:eq(3)", row).html(button);
       }
@@ -153,7 +153,7 @@ function addGroup() {
     success: function (response) {
       utils.enableAll();
       if (response.success) {
-        utils.showAlert("success", "fas fa-plus", "Successfully added group", name);
+        utils.showAlert("success", "fa fa-plus", "Successfully added group", name);
         $("#new_name").val("");
         $("#new_desc").val("");
         table.ajax.reload();
@@ -220,7 +220,7 @@ function editGroup() {
     success: function (response) {
       utils.enableAll();
       if (response.success) {
-        utils.showAlert("success", "fas fa-pencil-alt", "Successfully " + done + " group", name);
+        utils.showAlert("success", "fa fa-pencil", "Successfully " + done + " group", name);
       } else {
         utils.showAlert(
           "error",
@@ -258,7 +258,7 @@ function deleteGroup() {
     success: function (response) {
       utils.enableAll();
       if (response.success) {
-        utils.showAlert("success", "far fa-trash-alt", "Successfully deleted group ", name);
+        utils.showAlert("success", "fa fa-trash-o", "Successfully deleted group ", name);
         table.row(tr).remove().draw(false);
       } else {
         utils.showAlert("error", "", "Error while deleting group with ID " + id, response.message);

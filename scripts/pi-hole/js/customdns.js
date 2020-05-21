@@ -57,7 +57,7 @@ $(document).ready(function () {
             "' data-ip='" +
             row[1] +
             "'>" +
-            '<span class="far fa-trash-alt"></span>' +
+            '<span class="fa fa-trash-o"></span>' +
             "</button>"
           );
         }

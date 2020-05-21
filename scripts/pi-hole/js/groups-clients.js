@@ -192,7 +192,7 @@ function initTable() {
         '<button type="button" class="btn btn-danger btn-xs" id="deleteClient_' +
         data.id +
         '">' +
-        '<span class="far fa-trash-alt"></span>' +
+        '<span class="fa fa-trash-o"></span>' +
         "</button>";
       $("td:eq(3)", row).html(button);
     },
@@ -290,7 +290,7 @@ function addClient() {
     success: function (response) {
       utils.enableAll();
       if (response.success) {
-        utils.showAlert("success", "fas fa-plus", "Successfully added client", ip);
+        utils.showAlert("success", "fa fa-plus", "Successfully added client", ip);
         reloadClientSuggestions();
         table.ajax.reload(null, false);
       } else {
@@ -351,7 +351,7 @@ function editClient() {
     success: function (response) {
       utils.enableAll();
       if (response.success) {
-        utils.showAlert("success", "fas fa-pencil-alt", "Successfully " + done + " client", ipName);
+        utils.showAlert("success", "fas fa-pencil", "Successfully " + done + " client", ipName);
         table.ajax.reload(null, false);
       } else {
         utils.showAlert(
@@ -395,7 +395,7 @@ function deleteClient() {
     success: function (response) {
       utils.enableAll();
       if (response.success) {
-        utils.showAlert("success", "far fa-trash-alt", "Successfully deleted client ", ipName);
+        utils.showAlert("success", "fa fa-trash-o", "Successfully deleted client ", ipName);
         table.row(tr).remove().draw(false).ajax.reload(null, false);
         reloadClientSuggestions();
       } else {

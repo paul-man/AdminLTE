@@ -758,7 +758,7 @@ function updateSummaryData(runOnce) {
       data.ads_percentage_today = "to";
       data.domains_being_blocked = "API";
       // Adjust text
-      $("#temperature").html('<i class="fas fa-circle text-red"></i> FTL offline');
+      $("#temperature").html('<i class="fa fa-circle text-red"></i> FTL offline');
       // Show spinner
       $("#queries-over-time .overlay").show();
       $("#forward-destinations-pie .overlay").show();

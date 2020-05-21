@@ -37,7 +37,7 @@
                 <h3 class="statistic"><span id="dns_queries_today">---</span></h3>
             </div>
             <div class="icon">
-                <i class="fas fa-globe-americas"></i>
+                <i class="fa fa-globe"></i>
             </div>
         </div>
     </div>
@@ -50,7 +50,7 @@
                 <h3 class="statistic"><span id="queries_blocked_today">---</span></h3>
             </div>
             <div class="icon">
-                <i class="fas fa-hand-paper"></i>
+                <i class="fa fa-hand-paper-o"></i>
             </div>
         </div>
     </div>
@@ -63,7 +63,7 @@
                 <h3 class="statistic"><span id="percentage_blocked_today">---</span></h3>
             </div>
             <div class="icon">
-                <i class="fas fa-chart-pie"></i>
+                <i class="fa fa-pie-chart"></i>
             </div>
         </div>
     </div>
@@ -76,7 +76,7 @@
                 <h3 class="statistic"><span id="domains_being_blocked">---</span></h3>
             </div>
             <div class="icon">
-                <i class="fas fa-list-alt"></i>
+                <i class="fa fa-list-alt"></i>
             </div>
         </div>
     </div>
@@ -95,7 +95,7 @@
           </div>
         </div>
         <div class="overlay">
-          <i class="fas fa-sync fa-spin"></i>
+          <i class="fa fa-sync fa-spin"></i>
         </div>
         <!-- /.box-body -->
       </div>
@@ -120,7 +120,7 @@
           </div>
         </div>
         <div class="overlay">
-          <i class="fas fa-sync fa-spin"></i>
+          <i class="fa fa-sync fa-spin"></i>
         </div>
         <!-- /.box-body -->
       </div>
@@ -142,7 +142,7 @@
           </div>
         </div>
         <div class="overlay">
-          <i class="fas fa-sync fa-spin"></i>
+          <i class="fa fa-sync fa-spin"></i>
         </div>
         <!-- /.box-body -->
       </div>
@@ -161,7 +161,7 @@
           </div>
         </div>
         <div class="overlay">
-          <i class="fas fa-sync fa-spin"></i>
+          <i class="fa fa-sync fa-spin"></i>
         </div>
         <!-- /.box-body -->
       </div>
@@ -199,7 +199,7 @@ else
             </div>
         </div>
         <div class="overlay">
-          <i class="fas fa-sync fa-spin"></i>
+          <i class="fa fa-sync fa-spin"></i>
         </div>
         <!-- /.box-body -->
       </div>
@@ -226,7 +226,7 @@ else
             </div>
         </div>
         <div class="overlay">
-          <i class="fas fa-sync fa-spin"></i>
+          <i class="fa fa-sync fa-spin"></i>
         </div>
         <!-- /.box-body -->
       </div>
@@ -255,7 +255,7 @@ else
             </div>
         </div>
         <div class="overlay">
-          <i class="fas fa-sync fa-spin"></i>
+          <i class="fa fa-sync fa-spin"></i>
         </div>
         <!-- /.box-body -->
       </div>
@@ -283,7 +283,7 @@ else
             </div>
         </div>
         <div class="overlay">
-          <i class="fas fa-sync fa-spin"></i>
+          <i class="fa fa-sync fa-spin"></i>
         </div>
         <!-- /.box-body -->
       </div>

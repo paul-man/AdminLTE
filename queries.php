@@ -94,12 +94,12 @@ if(strlen($showing) > 0)
                             <i class="fa-stack-2x alSpinner"></i>
                         </div>
                         <div class="alSuccess" style="display: none">
-                            <i class="fas fa-circle fa-stack-2x text-green"></i>
-                            <i class="fas fa-check fa-stack-1x fa-inverse"></i>
+                            <i class="fa fa-circle fa-stack-2x text-green"></i>
+                            <i class="fa fa-check fa-stack-1x fa-inverse"></i>
                         </div>
                         <div class="alFailure" style="display: none">
-                            <i class="fas fa-circle fa-stack-2x text-red"></i>
-                            <i class="fas fa-times fa-stack-1x fa-inverse"></i>
+                            <i class="fa fa-circle fa-stack-2x text-red"></i>
+                            <i class="fa fa-times fa-stack-1x fa-inverse"></i>
                         </div>
                     </span>
                     <div class="alProcessing">Adding <span id="alDomain"></span> to the <span id="alList"></span>...</div>

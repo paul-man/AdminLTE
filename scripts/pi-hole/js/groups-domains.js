@@ -229,7 +229,7 @@ function initTable() {
         '<button type="button" class="btn btn-danger btn-xs" id="deleteDomain_' +
         data.id +
         '">' +
-        '<span class="far fa-trash-alt"></span>' +
+        '<span class="fa fa-trash-o"></span>' +
         "</button>";
       if (table.column(5).visible()) {
         $("td:eq(5)", row).html(button);
@@ -368,7 +368,7 @@ function addDomain() {
     success: function (response) {
       utils.enableAll();
       if (response.success) {
-        utils.showAlert("success", "fas fa-plus", "Successfully added " + domainRegex, domain);
+        utils.showAlert("success", "fa fa-plus", "Successfully added " + domainRegex, domain);
         domainEl.val("");
         commentEl.val("");
         wildcardEl.prop("checked", false);
@@ -460,7 +460,7 @@ function editDomain() {
       if (response.success) {
         utils.showAlert(
           "success",
-          "fas fa-pencil-alt",
+          "fa fa-pencil",
           "Successfully " + done + " " + domainRegex,
           domain
         );
@@ -509,12 +509,7 @@ function deleteDomain() {
     success: function (response) {
       utils.enableAll();
       if (response.success) {
-        utils.showAlert(
-          "success",
-          "far fa-trash-alt",
-          "Successfully deleted " + domainRegex,
-          domain
-        );
+        utils.showAlert("success", "fa fa-trash-o", "Successfully deleted " + domainRegex, domain);
         table.row(tr).remove().draw(false).ajax.reload(null, false);
       } else {
         utils.showAlert(
