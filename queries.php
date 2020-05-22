@@ -122,30 +122,32 @@ if(strlen($showing) > 0)
         </div>
         <!-- /.box-header -->
         <div class="box-body">
-            <table id="all-queries" class="display table table-striped table-bordered" cellspacing="0" width="100%">
-                <thead>
-                    <tr>
-                        <th>Time</th>
-                        <th>Type</th>
-                        <th>Domain</th>
-                        <th>Client</th>
-                        <th>Status</th>
-                        <th>Reply</th>
-                        <th>Action</th>
-                    </tr>
-                </thead>
-                <tfoot>
-                    <tr>
-                        <th>Time</th>
-                        <th>Type</th>
-                        <th>Domain</th>
-                        <th>Client</th>
-                        <th>Status</th>
-                        <th>Reply</th>
-                        <th>Action</th>
-                    </tr>
-                </tfoot>
-            </table>
+            <div class="table-responsive">
+                <table id="all-queries" class="table table-striped table-bordered" cellspacing="0" width="100%">
+                    <thead>
+                        <tr>
+                            <th>Time</th>
+                            <th>Type</th>
+                            <th>Domain</th>
+                            <th>Client</th>
+                            <th>Status</th>
+                            <th>Reply</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tfoot>
+                        <tr>
+                            <th>Time</th>
+                            <th>Type</th>
+                            <th>Domain</th>
+                            <th>Client</th>
+                            <th>Status</th>
+                            <th>Reply</th>
+                            <th>Action</th>
+                        </tr>
+                    </tfoot>
+                </table>
+            </div>
             <label><input type="checkbox" id="autofilter">&nbsp;Apply filtering on click on Type, Domain, and Clients</label><br/>
             <button type="button" id="resetButton" hidden="true">Clear Filters</button>
         </div>

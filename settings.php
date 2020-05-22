@@ -262,7 +262,7 @@ if (isset($_GET['tab']) && in_array($_GET['tab'], array("sysadmin", "adlists", "
                                 <div class="box-body">
                                     <div class="row">
                                         <div class="col-md-12">
-                                            <table class="table table-striped table-bordered dt-responsive nowrap">
+                                            <table class="table table-striped table-bordered nowrap">
                                                 <tbody>
                                                 <tr>
                                                     <th scope="row">Pi-hole Ethernet Interface:</th>
