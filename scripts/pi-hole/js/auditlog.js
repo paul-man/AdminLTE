@@ -140,6 +140,7 @@ $(document).ready(function () {
 
   $("#domain-frequency tbody").on("click", "button", function () {
     var url = $(this).parents("tr")[0].textContent.split(" ")[0];
+    // TODO
     if ($(this).context.textContent === " Blacklist") {
       blacklistUrl(url);
     } else {
@@ -149,6 +150,7 @@ $(document).ready(function () {
 
   $("#ad-frequency tbody").on("click", "button", function () {
     var url = $(this).parents("tr")[0].textContent.split(" ")[0];
+    // TODO
     if ($(this).context.textContent === " Whitelist") {
       whitelistUrl(url);
     } else {
