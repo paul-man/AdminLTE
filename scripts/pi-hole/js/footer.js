@@ -223,6 +223,7 @@ function testCookies() {
   return ret;
 }
 
+// TODO this is duplicate
 $(function () {
   if (!testCookies() && $("#cookieInfo").length > 0) {
     $("#cookieInfo").removeClass("d-none");
