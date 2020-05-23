@@ -58,21 +58,19 @@ function renderMessage(data, type, row) {
       );
 
     case "HOSTNAME":
-      var hint = "";
-      for (var i = 0; i < row.blob2 + row.message.length + 2; i++) hint += " ";
+      var hint = ' '.repeat(row.blob2 + row.message.length + 2);
       return (
         "Host names contains invalid character <code> " +
         decodeURIComponent(escape(row.blob1))[row.blob2] +
         "</code>:<pre>" +
         hint +
-        "↓\n" +
+        "&darr;\n" +
         row.message +
         ": " +
         decodeURIComponent(escape(row.blob1)) +
         "\n" +
         hint +
-        "↑" +
-        "</pre>"
+        "&uarr;</pre>"
       );
 
     default:
