@@ -52,7 +52,7 @@ function eventsource() {
         alInfo.addClass("d-none");
       });
       source.close();
-      $("#gravityBtn").removeAttr("disabled");
+      $("#gravityBtn").prop("disabled", false);
     },
     false
   );
