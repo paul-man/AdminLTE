@@ -232,7 +232,7 @@ function refreshTableData() {
   tableApi.ajax.url(APIstring).load(reloadCallback);
 }
 
-$(document).ready(function () {
+$(function () {
   var APIstring;
 
   if (instantquery) {
