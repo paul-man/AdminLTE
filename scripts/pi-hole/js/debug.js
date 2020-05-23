@@ -71,7 +71,7 @@ function eventsource() {
 }
 
 $("#debugBtn").on("click", function () {
-  $("#debugBtn").attr("disabled", true);
-  $("#upload").attr("disabled", true);
+  $("#debugBtn").prop("disabled", true);
+  $("#upload").prop("disabled", true);
   eventsource();
 });
