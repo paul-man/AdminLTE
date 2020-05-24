@@ -15,14 +15,14 @@
 </div>
 
 <!-- Alerts -->
-<div id="alInfo" class="alert alert-info alert-dismissible fade show d-none" role="alert">
+<div id="alInfo" class="alert alert-info alert-dismissible fade d-none" role="alert">
     Updating...this may take a while. <strong>Please do not navigate away from or close this page.</strong>
     <button type="button" class="close" data-dismiss="alert" aria-label="Close">
         <span aria-hidden="true">&times;</span>
     </button>
 </div>
 
-<div id="alSuccess" class="alert alert-success alert-dismissible fade show d-none" role="alert">
+<div id="alSuccess" class="alert alert-success alert-dismissible fade d-none" role="alert">
     Success!
     <button type="button" class="close" data-dismiss="alert" aria-label="Close">
         <span aria-hidden="true">&times;</span>

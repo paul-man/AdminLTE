@@ -229,7 +229,7 @@ $(document).ready(function () {
   var alInfo = $("#alInfo");
   if (alInfo.length > 0) {
     alInfo.delay(3000).fadeOut(2000, function () {
-      alInfo.addClass("d-none");
+      alInfo.addClass("d-none").removeClass("show");
     });
   }
 

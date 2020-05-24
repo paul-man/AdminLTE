@@ -43,19 +43,19 @@
 </div>
 
 <!-- Alerts -->
-<div id="alInfo" class="alert alert-info alert-dismissible fade show d-none" role="alert">
+<div id="alInfo" class="alert alert-info alert-dismissible fade d-none" role="alert">
     Updating the custom DNS entries...
     <button type="button" class="close" data-dismiss="alert" aria-label="Close">
         <span aria-hidden="true">&times;</span>
     </button>
 </div>
-<div id="alSuccess" class="alert alert-success alert-dismissible fade show d-none" role="alert">
+<div id="alSuccess" class="alert alert-success alert-dismissible fade d-none" role="alert">
     Success! The list will refresh.
     <button type="button" class="close" data-dismiss="alert" aria-label="Close">
         <span aria-hidden="true">&times;</span>
     </button>
 </div>
-<div id="alFailure" class="alert alert-danger alert-dismissible fade show d-none" role="alert">
+<div id="alFailure" class="alert alert-danger alert-dismissible fade d-none" role="alert">
     Failure! Something went wrong, see output below:<br/><br/>
     <pre class="bg-light">
         <span id="err"></span>

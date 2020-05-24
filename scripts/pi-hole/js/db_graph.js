@@ -82,8 +82,7 @@ function compareNumbers(a, b) {
 
 function updateQueriesOverTime() {
   $("#queries-over-time .overlay").show();
-  timeoutWarning.removeClass("d-none");
-  timeoutWarning.addClass("show");
+  timeoutWarning.removeClass("d-none").addClass("show");
 
   // Compute interval to obtain about 200 values
   var num = 200;
@@ -163,7 +162,7 @@ function updateQueriesOverTime() {
 
       timeLineChart.options.scales.xAxes[0].display = true;
       $("#queries-over-time .overlay").hide();
-      timeoutWarning.addClass("d-none");
+      timeoutWarning.addClass("d-none").removeClass("show");
       timeLineChart.update();
     }
   );

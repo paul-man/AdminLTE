@@ -20,9 +20,9 @@ function eventsource() {
   var source = new EventSource("scripts/pi-hole/php/gravity.sh.php");
 
   ta.html("");
-  ta.show();
-  alInfo.removeClass("d-none");
-  alSuccess.addClass("d-none");
+  ta.removeClass("d-none");
+  alInfo.removeClass("d-none").addClass("show");
+  alSuccess.addClass("d-none").removeClass("show");
 
   source.addEventListener(
     "message",

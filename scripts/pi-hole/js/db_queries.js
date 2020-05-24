@@ -88,7 +88,7 @@ function add(domain, list) {
     alList.html("Blacklist");
   }
 
-  alInfo.removeClass("d-none");
+  alInfo.removeClass("d-none").addClass("show");
   alSuccess.addClass("d-none");
   alFailure.addClass("d-none");
   $.ajax({
@@ -103,29 +103,29 @@ function add(domain, list) {
         alFailure.removeClass("d-none");
         err.html(response);
         alFailure.delay(4000).fadeOut(2000, function () {
-          alFailure.addClass("d-none");
+          alFailure.addClass("d-none").removeClass("show");
         });
       } else {
         alSuccess.removeClass("d-none");
         alSuccess.delay(1000).fadeOut(2000, function () {
-          alSuccess.addClass("d-none");
+          alSuccess.addClass("d-none").removeClass("show");
         });
       }
 
       alInfo.delay(1000).fadeOut(2000, function () {
-        alInfo.addClass("d-none");
+        alInfo.addClass("d-none").removeClass("show");
         alList.html("");
         alDomain.html("");
       });
     },
     error: function () {
-      alFailure.removeClass("d-none");
+      alFailure.removeClass("d-none").addClass("show");
       err.html("");
       alFailure.delay(1000).fadeOut(2000, function () {
-        alFailure.addClass("d-none");
+        alFailure.addClass("d-none").removeClass("show");
       });
       alInfo.delay(1000).fadeOut(2000, function () {
-        alInfo.addClass("d-none");
+        alInfo.addClass("d-none").removeClass("show");
         alList.html("");
         alDomain.html("");
       });
@@ -191,7 +191,7 @@ function getQueryTypes() {
 }
 
 var reloadCallback = function () {
-  timeoutWarning.addClass("d-none");
+  timeoutWarning.addClass("d-none").removeClass("show");
   statistics = [0, 0, 0, 0];
 
   var data = tableApi.rows().data();
@@ -220,7 +220,7 @@ var reloadCallback = function () {
 };
 
 function refreshTableData() {
-  timeoutWarning.removeClass("d-none");
+  timeoutWarning.removeClass("d-none").addClass("show");
   var APIstring = "api_db.php?getAllQueries&from=" + from + "&until=" + until;
   // Check if query type filtering is enabled
   var queryType = getQueryTypes();
