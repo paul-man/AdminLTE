@@ -233,7 +233,8 @@
     <script src="scripts/vendor/Chart.min.js"></script>
     <script src="scripts/vendor/iCheck.min.js"></script>
 </head>
-<body class="hold-transition sidebar-mini <?php if($boxedlayout){ ?>layout-boxed<?php } ?>">
+
+<body class="hold-transition sidebar-mini <?php if($boxedlayout){ ?>layout-boxed<?php } ?>" data-theme="<?php echo $checkbox_theme_name; if($checkbox_theme_name !== $checkbox_theme_variant){ echo "-$checkbox_theme_variant"; } ?>" data-timer="<?php if(file_exists("../custom_disable_timer")){ echo file_get_contents("../custom_disable_timer"); } ?>">
 <noscript>
     <!-- JS Warning -->
     <div>
@@ -250,9 +251,6 @@ if($auth) {
 }
 ?>
 
-<!-- Send token to JS -->
-<div id="checkbox_theme" hidden><?php echo $checkbox_theme_name; ?><?php if($checkbox_theme_name !== $checkbox_theme_variant){ echo "-$checkbox_theme_variant"; } ?></div>
-<div id="enableTimer" hidden><?php if(file_exists("../custom_disable_timer")){ echo file_get_contents("../custom_disable_timer"); } ?></div>
 <div class="wrapper">
     <header class="main-header">
         <!-- Logo -->

@@ -42,8 +42,8 @@ function piholeChanged(action) {
 
 function countDown() {
   var ena = $("#enableLabel");
-  var enaT = $("#enableTimer");
-  var target = new Date(parseInt(enaT.html()));
+  var timer = document.body.getAttribute("data-timer");
+  var target = new Date(parseInt(timer, 10));
   var seconds = Math.round((target.getTime() - new Date().getTime()) / 1000);
 
   if (seconds > 0) {
@@ -58,7 +58,6 @@ function countDown() {
 
 function piholeChange(action, duration) {
   var token = encodeURIComponent($("#token").text());
-  var enaT = $("#enableTimer");
   var btnStatus;
 
   switch (action) {
@@ -81,7 +80,7 @@ function piholeChange(action, duration) {
           btnStatus.html("");
           piholeChanged("disabled");
           if (duration > 0) {
-            enaT.html(new Date().getTime() + duration * 1000);
+            document.body.setAttribute("data-timer", new Date().getTime() + duration * 1000);
             setTimeout(countDown, 100);
           }
         }
@@ -110,10 +109,25 @@ function checkMessages() {
   });
 }
 
+function testCookies() {
+  if (navigator.cookieEnabled) {
+    return true;
+  }
+
+  // set and read cookie
+  document.cookie = "cookietest=1";
+  var ret = document.cookie.indexOf("cookietest=") !== -1;
+
+  // delete cookie
+  document.cookie = "cookietest=1; expires=Thu, 01-Jan-1970 00:00:01 GMT";
+
+  return ret;
+}
+
 $(document).ready(function () {
-  var enaT = $("#enableTimer");
-  var target = new Date(parseInt(enaT.html()));
-  var seconds = Math.round((target.getTime() - new Date().getTime()) / 1000);
+  var timer = document.body.getAttribute("data-timer");
+  var targetTime = new Date(parseInt(timer, 10));
+  var seconds = Math.round((targetTime.getTime() - new Date().getTime()) / 1000);
   if (seconds > 0) {
     setTimeout(countDown, 100);
   }
@@ -122,10 +136,10 @@ $(document).ready(function () {
     $("#cookieInfo").show();
   }
 
-  var checkboxTheme = $("#checkbox_theme").text();
+  var theme = document.body.getAttribute("data-theme");
   $("input").icheck({
-    checkboxClass: "icheckbox_" + checkboxTheme,
-    radioClass: "iradio_" + checkboxTheme,
+    checkboxClass: "icheckbox_" + theme,
+    radioClass: "iradio_" + theme,
     increaseArea: "20%"
   });
   // Run check immediately after page loading ...
@@ -205,26 +219,5 @@ $(document).keypress(function (e) {
   if ((e.keyCode === 10 || e.keyCode === 13) && e.ctrlKey && $("#loginpw").is(":focus")) {
     $("#loginform").attr("action", "settings.php");
     $("#loginform").submit();
-  }
-});
-
-function testCookies() {
-  if (navigator.cookieEnabled) {
-    return true;
-  }
-
-  // set and read cookie
-  document.cookie = "cookietest=1";
-  var ret = document.cookie.indexOf("cookietest=") !== -1;
-
-  // delete cookie
-  document.cookie = "cookietest=1; expires=Thu, 01-Jan-1970 00:00:01 GMT";
-
-  return ret;
-}
-
-$(function () {
-  if (!testCookies() && $("#cookieInfo").length > 0) {
-    $("#cookieInfo").show();
   }
 });
