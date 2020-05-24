@@ -108,24 +108,6 @@
 	font-weight: 700;
 }
 
-.vertical-alignment-helper {
-    display: table;
-    width: 100%;
-    height: 100%;
-    pointer-events: none;
-}
-.vertical-alignment-helper > .vertical-align-center {
-    display: table-cell;
-    vertical-align: middle;
-}
-.vertical-alignment-helper > .vertical-align-center > .modal-content {
-    width: 250px;
-    margin-left: auto;
-    margin-right: auto;
-    word-wrap: break-word;
-    pointer-events: all;
-}
-
 .alSpinner {
     top: 0.1em;
     left: 0.1em;
@@ -284,4 +266,27 @@
 
 .user-panel > .info i {
     margin-right: 3px;
+}
+
+.row-centered > div[class^=col-] {
+    display: inline-block;
+    float: none;
+}
+
+.modal-dialog-center {
+    height: 100%;
+    width: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    pointer-events: none; /* should be revisited */
+}
+
+.modal-dialog-center .modal-content {
+    margin: 0 auto;
+    width: 250px;
+    pointer-events: all; /* should be revisited */
 }
