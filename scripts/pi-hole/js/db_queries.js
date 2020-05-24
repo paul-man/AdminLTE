@@ -88,9 +88,9 @@ function add(domain, list) {
     alList.html("Blacklist");
   }
 
-  alInfo.show();
-  alSuccess.hide();
-  alFailure.hide();
+  alInfo.removeClass("d-none");
+  alSuccess.addClass("d-none");
+  alFailure.addClass("d-none");
   $.ajax({
     url: "scripts/pi-hole/php/add.php",
     method: "post",
@@ -100,32 +100,32 @@ function add(domain, list) {
         response.indexOf("not a valid argument") >= 0 ||
         response.indexOf("is not a valid domain") >= 0
       ) {
-        alFailure.show();
+        alFailure.removeClass("d-none");
         err.html(response);
         alFailure.delay(4000).fadeOut(2000, function () {
-          alFailure.hide();
+          alFailure.addClass("d-none");
         });
       } else {
-        alSuccess.show();
+        alSuccess.removeClass("d-none");
         alSuccess.delay(1000).fadeOut(2000, function () {
-          alSuccess.hide();
+          alSuccess.addClass("d-none");
         });
       }
 
       alInfo.delay(1000).fadeOut(2000, function () {
-        alInfo.hide();
+        alInfo.addClass("d-none");
         alList.html("");
         alDomain.html("");
       });
     },
     error: function () {
-      alFailure.show();
+      alFailure.removeClass("d-none");
       err.html("");
       alFailure.delay(1000).fadeOut(2000, function () {
-        alFailure.hide();
+        alFailure.addClass("d-none");
       });
       alInfo.delay(1000).fadeOut(2000, function () {
-        alInfo.hide();
+        alInfo.addClass("d-none");
         alList.html("");
         alDomain.html("");
       });
@@ -191,9 +191,11 @@ function getQueryTypes() {
 }
 
 var reloadCallback = function () {
-  timeoutWarning.hide();
+  timeoutWarning.addClass("d-none");
   statistics = [0, 0, 0, 0];
+
   var data = tableApi.rows().data();
+
   for (var i = 0; i < data.length; i++) {
     statistics[0]++;
     if (data[i][4] === 1) {
@@ -218,7 +220,7 @@ var reloadCallback = function () {
 };
 
 function refreshTableData() {
-  timeoutWarning.show();
+  timeoutWarning.removeClass("d-none");
   var APIstring = "api_db.php?getAllQueries&from=" + from + "&until=" + until;
   // Check if query type filtering is enabled
   var queryType = getQueryTypes();
@@ -254,64 +256,64 @@ $(document).ready(function () {
           color = "red";
           fieldtext = "Blocked (gravity)";
           buttontext =
-            '<button type="button" class="btn btn-default btn-sm text-green"><i class="fas fa-check"></i> Whitelist</button>';
+            '<button type="button" class="btn btn-light btn-sm text-green"><i class="fas fa-check"></i> Whitelist</button>';
           break;
         case 2:
           color = "green";
-          fieldtext = "OK <br class='hidden-lg'>(forwarded)";
+          fieldtext = "OK <br class='d-lg-none'>(forwarded)";
           buttontext =
-            '<button type="button" class="btn btn-default btn-sm text-red"><i class="fa fa-ban"></i> Blacklist</button>';
+            '<button type="button" class="btn btn-light btn-sm text-red"><i class="fas fa-ban"></i> Blacklist</button>';
           break;
         case 3:
           color = "green";
-          fieldtext = "OK <br class='hidden-lg'>(cached)";
+          fieldtext = "OK <br class='d-lg-none'>(cached)";
           buttontext =
-            '<button type="button" class="btn btn-default btn-sm text-red"><i class="fa fa-ban"></i> Blacklist</button>';
+            '<button type="button" class="btn btn-light btn-sm text-red"><i class="fas fa-ban"></i> Blacklist</button>';
           break;
         case 4:
           color = "red";
-          fieldtext = "Blocked <br class='hidden-lg'>(regex blacklist)";
+          fieldtext = "Blocked <br class='d-lg-none'>(regex blacklist)";
           buttontext =
-            '<button type="button" class="btn btn-default btn-sm text-green"><i class="fas fa-check"></i> Whitelist</button>';
+            '<button type="button" class="btn btn-light btn-sm text-green"><i class="fas fa-check"></i> Whitelist</button>';
           break;
         case 5:
           color = "red";
-          fieldtext = "Blocked <br class='hidden-lg'>(exact blacklist)";
+          fieldtext = "Blocked <br class='d-lg-none'>(exact blacklist)";
           buttontext =
-            '<button type="button" class="btn btn-default btn-sm text-green"><i class="fas fa-check"></i> Whitelist</button>';
+            '<button type="button" class="btn btn-light btn-sm text-green"><i class="fas fa-check"></i> Whitelist</button>';
           break;
         case 6:
           color = "red";
-          fieldtext = "Blocked <br class='hidden-lg'>(external, IP)";
+          fieldtext = "Blocked <br class='d-lg-none'>(external, IP)";
           buttontext = "";
           break;
         case 7:
           color = "red";
-          fieldtext = "Blocked <br class='hidden-lg'>(external, NULL)";
+          fieldtext = "Blocked <br class='d-lg-none'>(external, NULL)";
           buttontext = "";
           break;
         case 8:
           color = "red";
-          fieldtext = "Blocked <br class='hidden-lg'>(external, NXRA)";
+          fieldtext = "Blocked <br class='d-lg-none'>(external, NXRA)";
           buttontext = "";
           break;
         case 9:
           color = "red";
           fieldtext = "Blocked (gravity, CNAME)";
           buttontext =
-            '<button type="button" class="btn btn-default btn-sm text-green"><i class="fas fa-check"></i> Whitelist</button>';
+            '<button type="button" class="btn btn-light btn-sm text-green"><i class="fas fa-check"></i> Whitelist</button>';
           break;
         case 10:
           color = "red";
-          fieldtext = "Blocked <br class='hidden-lg'>(regex blacklist, CNAME)";
+          fieldtext = "Blocked <br class='d-lg-none'>(regex blacklist, CNAME)";
           buttontext =
-            '<button type="button" class="btn btn-default btn-sm text-green"><i class="fas fa-check"></i> Whitelist</button>';
+            '<button type="button" class="btn btn-light btn-sm text-green"><i class="fas fa-check"></i> Whitelist</button>';
           break;
         case 11:
           color = "red";
-          fieldtext = "Blocked <br class='hidden-lg'>(exact blacklist, CNAME)";
+          fieldtext = "Blocked <br class='d-lg-none'>(exact blacklist, CNAME)";
           buttontext =
-            '<button type="button" class="btn btn-default btn-sm text-green"><i class="fas fa-check"></i> Whitelist</button>';
+            '<button type="button" class="btn btn-light btn-sm text-green"><i class="fas fa-check"></i> Whitelist</button>';
           break;
         default:
           color = "black";
@@ -358,7 +360,7 @@ $(document).ready(function () {
           if (type === "display") {
             return moment
               .unix(Math.floor(data / 1e6))
-              .format("Y-MM-DD [<br class='hidden-lg'>]HH:mm:ss z");
+              .format("Y-MM-DD [<br class='d-lg-none'>]HH:mm:ss z");
           }
 
           return data;

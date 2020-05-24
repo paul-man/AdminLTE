@@ -24,7 +24,7 @@
     <h4>Top left: Status display</h4>
     <p>Shows different status messages:</p>
     <ul>
-        <li>Status: Current status of the Pi-hole - Active (<i class="fa fa-circle text-green-light"></i>), Offline (<i class="fa fa-circle text-red"></i>), or Starting (<i class="fa fa-circle text-orange"></i>)</li>
+        <li>Status: Current status of the Pi-hole - Active (<i class="fas fa-circle text-green-light"></i>), Offline (<i class="fas fa-circle text-red"></i>), or Starting (<i class="fas fa-circle text-orange"></i>)</li>
         <li>Temp: Current CPU temperature</li>
         <li>Load: load averages for the last minute, 5 minutes and 15 minutes, respectively. A load average of 1 reflects the full workload of a single processor on the system. We show a red icon if the current load exceeds the number of available processors on this machine (which is <?php echo $nproc; ?>)</li>
         <li>Memory usage: Shows the percentage of memory actually blocked by applications. We show a red icon if the memory usage exceeds 75%</li>
@@ -121,7 +121,7 @@
 <div class="row">
     <div class="col-md-12">
     <h2>Authentication system (currently <?php if($authenticationsystem) { ?>enabled<?php } else { ?>disabled<?php } ?>)</h2>
-    <p>Using the command<pre>sudo pihole -a -p</pre> and entering a password to be set, one can enable the authentication system of this web interface. Thereafter, a login is required for most pages (the dashboard will show a limited amount of statistics). Note that the authentication system may be disabled again, by setting an empty password using the command shown above. The Help center will show more details concerning the authentication system only if it is enabled</p>
+    <p>Using the command <code>sudo pihole -a -p</code> and entering a password to be set, one can enable the authentication system of this web interface. Thereafter, a login is required for most pages (the dashboard will show a limited amount of statistics). Note that the authentication system may be disabled again, by setting an empty password using the command shown above. The Help center will show more details concerning the authentication system only if it is enabled</p>
     </div>
 </div>
 <?php if($authenticationsystem) { ?>

@@ -160,7 +160,7 @@ $(document).ready(function () {
         width: "8%",
         render: function (data, type) {
           if (type === "display") {
-            return moment.unix(data).format("Y-MM-DD [<br class='hidden-lg'>]HH:mm:ss z");
+            return moment.unix(data).format("Y-MM-DD [<br class='d-lg-none'>]HH:mm:ss z");
           }
 
           return data;
@@ -171,7 +171,7 @@ $(document).ready(function () {
         width: "8%",
         render: function (data, type) {
           if (type === "display") {
-            return moment.unix(data).format("Y-MM-DD [<br class='hidden-lg'>]HH:mm:ss z");
+            return moment.unix(data).format("Y-MM-DD [<br class='d-lg-none'>]HH:mm:ss z");
           }
 
           return data;

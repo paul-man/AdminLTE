@@ -17,20 +17,19 @@ $token = $_SESSION['token'];
 <!-- Send PHP info to JS -->
 <div id="token" hidden><?php echo $token ?></div>
 
-<!-- Title -->
-<div class="page-header">
-    <h1>Specify date range to be queried from the Pi-hole query database</h1>
+<div class="row pt-4 mb-3">
+    <div class="col-sm-12">
+        <h1>Specify date range to be queried from the Pi-hole query database</h1>
+    </div>
 </div>
 
-<div class="row">
+<div class="row mb-3">
   <div class="col-md-12">
-    <div class="box">
-      <div class="box-header with-border">
-        <h3 class="box-title">
-          Select date and time range
-        </h3>
+    <div class="card card-outline card-secondary">
+      <div class="card-header">
+        <h3 class="card-title">Select date and time range</h3>
       </div>
-      <div class="box-body">
+      <div class="card-body">
         <div class="row">
           <div class="form-group col-md-12">
             <div class="input-group">
@@ -46,9 +45,10 @@ $token = $_SESSION['token'];
   </div>
 </div>
 
+<!-- TODO -->
 <div class="row">
     <div class="col-md-12">
-        <label>Query status:</label>
+        <h3>Query status:</h3>
     </div>
     <div class="form-group">
         <div class="col-md-3">
@@ -71,15 +71,19 @@ $token = $_SESSION['token'];
     </div>
 </div>
 
-<div id="timeoutWarning" class="alert alert-warning alert-dismissible fade in" role="alert" hidden>
-    Depending on how large of a range you specified, the request may time out while Pi-hole tries to retrieve all the data.<br/><span id="err"></span>
+<div id="timeoutWarning" class="alert alert-warning alert-dismissible fade show d-none" role="alert">
+    Depending on how large of a range you specified, the request may time out while Pi-hole tries to retrieve all the data.
+    <br/><span id="err"></span>
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+    </button>
 </div>
 
 <!-- Small boxes (Stat box) -->
 <div class="row">
-    <div class="col-lg-3 col-xs-12">
+    <div class="col-sm-6 col-lg-3">
         <!-- small box -->
-        <div class="small-box bg-aqua">
+        <div class="small-box bg-info">
             <div class="inner">
                 <h3 class="statistic" id="ads_blocked_exact">---</h3>
                 <p>Queries Blocked</p>
@@ -90,9 +94,9 @@ $token = $_SESSION['token'];
         </div>
     </div>
     <!-- ./col -->
-    <div class="col-lg-3 col-xs-12">
+    <div class="col-sm-6 col-lg-3">
         <!-- small box -->
-        <div class="small-box bg-aqua">
+        <div class="small-box bg-info">
             <div class="inner">
                 <h3 class="statistic" id="ads_wildcard_blocked">---</h3>
                 <p>Queries Blocked (Wildcards)</p>
@@ -103,9 +107,9 @@ $token = $_SESSION['token'];
         </div>
     </div>
     <!-- ./col -->
-    <div class="col-lg-3 col-xs-12">
+    <div class="col-sm-6 col-lg-3">
         <!-- small box -->
-        <div class="small-box bg-green">
+        <div class="small-box bg-success">
             <div class="inner">
                 <h3 class="statistic" id="dns_queries">---</h3>
                 <p>Queries Total</p>
@@ -116,9 +120,9 @@ $token = $_SESSION['token'];
         </div>
     </div>
     <!-- ./col -->
-    <div class="col-lg-3 col-xs-12">
+    <div class="col-sm-6 col-lg-3">
         <!-- small box -->
-        <div class="small-box bg-yellow">
+        <div class="small-box bg-warning">
             <div class="inner">
                 <h3 class="statistic" id="ads_percentage_today">---</h3>
                 <p>Queries Blocked</p>
@@ -133,13 +137,12 @@ $token = $_SESSION['token'];
 
 <div class="row">
     <div class="col-md-12">
-      <div class="box" id="recent-queries">
-        <div class="box-header with-border">
-          <h3 class="box-title">Recent Queries</h3>
+      <div class="card card-outline card-secondary" id="recent-queries">
+        <div class="card-header">
+          <h3 class="card-title">Recent Queries</h3>
         </div>
-        <!-- /.box-header -->
-        <div class="box-body">
-            <table id="all-queries" class="display table table-striped table-bordered" cellspacing="0" width="100%">
+        <div class="card-body">
+            <table id="all-queries" class="display table table-striped table-bordered w-100">
                 <thead>
                     <tr>
                         <th>Time</th>
@@ -162,9 +165,7 @@ $token = $_SESSION['token'];
                 </tfoot>
             </table>
         </div>
-        <!-- /.box-body -->
       </div>
-      <!-- /.box -->
     </div>
 </div>
 <!-- /.row -->

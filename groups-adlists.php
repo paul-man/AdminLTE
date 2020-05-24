@@ -8,23 +8,20 @@
     require "scripts/pi-hole/php/header.php";
 ?>
 
-<!-- Title -->
-<div class="page-header">
-    <h1>Adlist group management</h1>
+<div class="row pt-4 mb-3">
+    <div class="col-sm-12">
+        <h1>Adlist group management</h1>
+    </div>
 </div>
 
 <!-- Domain Input -->
-<div class="row">
+<div class="row mb-3">
     <div class="col-md-12">
-        <div class="box" id="add-group">
-            <!-- /.box-header -->
-            <div class="box-header with-border">
-                <h3 class="box-title">
-                    Add a new adlist
-                </h3>
+        <div class="card card-outline card-secondary" id="add-group">
+            <div class="card-header">
+                <h3 class="card-title">Add a new adlist</h3>
             </div>
-            <!-- /.box-header -->
-            <div class="box-body">
+            <div class="card-body">
                 <div class="row">
                     <div class="form-group col-md-6">
                         <label for="new_address">Address:</label>
@@ -36,40 +33,44 @@
                     </div>
                 </div>
             </div>
-            <div class="box-footer clearfix">
-                <strong>Hint:</strong>&nbsp;Please run <code>pihole -g</code> or update your gravity list <a href="gravity.php">online</a> after modifying your adlists.
-                <button type="button" id="btnAdd" class="btn btn-primary pull-right">Add</button>
+            <div class="card-footer">
+                <div class="row">
+                    <div class="col-md-6">
+                        <strong>Hint:</strong> Please run <code>pihole -g</code> or update your gravity list <a href="gravity.php">online</a> after modifying your adlists.
+                    </div>
+                    <div class="col-md-6 d-flex justify-content-md-end mt-3 mt-md-0">
+                        <button type="button" id="btnAdd" class="btn btn-primary">Add</button>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
 </div>
+
 <div class="row">
     <div class="col-md-12">
-        <div class="box" id="adlists-list">
-            <div class="box-header with-border">
-                <h3 class="box-title">
+        <div class="card card-outline card-secondary" id="adlists-list">
+            <div class="card-header">
+                <h3 class="card-title">
                     List of configured adlists
                 </h3>
             </div>
-            <!-- /.box-header -->
-            <div class="box-body">
-                <table id="adlistsTable" class="display table table-striped table-bordered" cellspacing="0" width="100%">
+            <div class="card-body">
+                <table id="adlistsTable" class="display table table-striped table-bordered w-100">
                     <thead>
-                    <tr>
-                        <th>ID</th>
-                        <th>Address</th>
-                        <th>Status</th>
-                        <th>Comment</th>
-                        <th>Group assignment</th>
-                        <th>Action</th>
-                    </tr>
+                        <tr>
+                            <th>ID</th>
+                            <th>Address</th>
+                            <th>Status</th>
+                            <th>Comment</th>
+                            <th>Group assignment</th>
+                            <th>Action</th>
+                        </tr>
                     </thead>
                 </table>
-                <button type="button" id="resetButton" class="btn btn-default btn-sm text-red hidden">Reset sorting</button>
+                <button type="button" id="resetButton" class="btn btn-light btn-sm text-red d-none">Reset sorting</button>
             </div>
-            <!-- /.box-body -->
         </div>
-        <!-- /.box -->
     </div>
 </div>
 
@@ -77,5 +78,5 @@
 <script src="scripts/pi-hole/js/groups-adlists.js"></script>
 
 <?php
-require "scripts/pi-hole/php/footer.php";
+    require "scripts/pi-hole/php/footer.php";
 ?>

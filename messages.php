@@ -8,18 +8,18 @@
     require "scripts/pi-hole/php/header.php";
 ?>
 
-<!-- Title -->
-<div class="page-header">
-    <h1>Pi-hole diagnosis</h1>
-    <small>On this page, you can see messages from your Pi-hole concerning possible issues.</small>
+<div class="row pt-4 mb-3">
+    <div class="col-sm-12">
+        <h1>Pi-hole diagnosis</h1>
+        <h2 class="h3">On this page, you can see messages from your Pi-hole concerning possible issues.</h2>
+    </div>
 </div>
 
 <div class="row">
     <div class="col-md-12">
-        <div class="box" id="messages-list">
-            <!-- /.box-header -->
-            <div class="box-body">
-                <table id="messagesTable" class="display table table-striped table-bordered" cellspacing="0" width="100%">
+        <div class="card card-outline card-secondary" id="messages-list">
+            <div class="card-body">
+                <table id="messagesTable" class="display table table-striped table-bordered w-100">
                     <thead>
                     <tr>
                         <th>ID</th>
@@ -35,9 +35,7 @@
                     </thead>
                 </table>
             </div>
-            <!-- /.box-body -->
         </div>
-        <!-- /.box -->
     </div>
 </div>
 

@@ -21,15 +21,14 @@ $token = $_SESSION['token'];
 <span class="graphs-grid"></span>
 <span class="graphs-ticks"></span>
 
-<div class="row">
+<div class="row pt-4">
     <div class="col-md-12">
-      <div class="box" id="network-details">
-        <div class="box-header with-border">
-          <h3 class="box-title">Network overview</h3>
+      <div class="card card-outline card-secondary" id="network-details">
+        <div class="card-header">
+          <h3 class="card-title">Network overview</h3>
         </div>
-        <!-- /.box-header -->
-        <div class="box-body">
-            <table id="network-entries" class="display table table-striped table-bordered" cellspacing="0" width="100%">
+        <div class="card-body">
+            <table id="network-entries" class="display table table-striped table-bordered w-100">
                 <thead>
                     <tr>
                         <th>IP address</th>
@@ -56,7 +55,7 @@ $token = $_SESSION['token'];
                 </tfoot>
             </table>
             <label>Background color: Last query from this device seen ...</label>
-        <table width="100%">
+        <table class="table w-100">
           <tr class="text-center">
             <td class="network-recent" width="15%">just now</td>
             <td class="network-gradient" width="30%">... to ...</td>
@@ -66,9 +65,7 @@ $token = $_SESSION['token'];
           </tr>
         </table>
         </div>
-        <!-- /.box-body -->
       </div>
-      <!-- /.box -->
     </div>
 </div>
 <!-- /.row -->

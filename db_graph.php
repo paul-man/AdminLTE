@@ -17,18 +17,19 @@ $token = $_SESSION['token'];
 <!-- Send PHP info to JS -->
 <div id="token" hidden><?php echo $token ?></div>
 
-<div class="page-header">
-    <h1>Compute graphical statistics from the Pi-hole query database</h1>
+<div class="row pt-4 mb-3">
+    <div class="col-sm-12">
+        <h1>Compute graphical statistics from the Pi-hole query database</h1>
+    </div>
 </div>
-<div class="row">
+
+<div class="row mb-3">
   <div class="col-md-12">
-    <div class="box">
-      <div class="box-header with-border">
-        <h3 class="box-title">
-          Select date and time range
-        </h3>
+    <div class="card card-outline card-secondary">
+      <div class="card-header">
+        <h3 class="card-title">Select date and time range</h3>
       </div>
-      <div class="box-body">
+      <div class="card-body">
         <div class="row">
           <div class="form-group col-md-12">
             <div class="input-group">
@@ -44,23 +45,25 @@ $token = $_SESSION['token'];
   </div>
 </div>
 
-<div class="row">
+<div class="row mb-3">
   <div class="col-md-12">
-    <div id="timeoutWarning" class="alert alert-warning alert-dismissible fade in" role="alert" hidden>
-        Depending on how large of a range you specified, the request may time out while Pi-hole tries to retrieve all the data.<br/><span id="err"></span>
+    <div id="timeoutWarning" class="alert alert-warning alert-dismissible fade show d-none" role="alert">
+        Depending on how large of a range you specified, the request may time out while Pi-hole tries to retrieve all the data.
+        <br/><span id="err"></span>
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+        </button>
     </div>
   </div>
 </div>
 
-<div class="row">
+<div class="row mb-3">
   <div class="col-md-12">
-    <div class="box" id="queries-over-time">
-      <div class="box-header with-border">
-        <h3 class="box-title">
-          Queries over the selected time period
-        </h3>
+    <div class="card card-outline card-secondary" id="queries-over-time">
+      <div class="card-header">
+        <h3 class="card-title">Queries over the selected time period</h3>
       </div>
-      <div class="box-body">
+      <div class="card-body">
         <div class="row">
           <div class="col-md-12">
             <div class="chart">
@@ -70,7 +73,7 @@ $token = $_SESSION['token'];
         </div>
       </div>
       <div class="overlay" hidden>
-        <i class="fa fa-sync fa-spin"></i>
+        <i class="fas fa-2x fa-sync fa-spin"></i>
       </div>
     </div>
   </div>

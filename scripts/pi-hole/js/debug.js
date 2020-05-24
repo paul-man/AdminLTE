@@ -20,7 +20,7 @@ function httpGet(ta, theUrl) {
 
   xmlhttp.onreadystatechange = function () {
     if (xmlhttp.readyState === 4 && xmlhttp.status === 200) {
-      ta.show();
+      ta.removeClass("d-none");
       ta.empty();
       ta.append(xmlhttp.responseText);
     }
@@ -50,7 +50,7 @@ function eventsource() {
 
   // Reset and show field
   ta.empty();
-  ta.show();
+  ta.removeClass("d-none");
 
   source.addEventListener(
     "message",

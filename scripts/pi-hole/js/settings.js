@@ -30,7 +30,7 @@ $(".confirm-poweroff").confirm({
   post: true,
   confirmButtonClass: "btn-danger",
   cancelButtonClass: "btn-success",
-  dialogClass: "modal-dialog"
+  dialogClass: "modal-dialog modal-dialog-centered"
 });
 $(".confirm-reboot").confirm({
   text: "Are you sure you want to send a reboot command to your Pi-hole?",
@@ -46,7 +46,7 @@ $(".confirm-reboot").confirm({
   post: true,
   confirmButtonClass: "btn-danger",
   cancelButtonClass: "btn-success",
-  dialogClass: "modal-dialog"
+  dialogClass: "modal-dialog modal-dialog-centered"
 });
 
 $(".confirm-restartdns").confirm({
@@ -63,7 +63,7 @@ $(".confirm-restartdns").confirm({
   post: true,
   confirmButtonClass: "btn-danger",
   cancelButtonClass: "btn-success",
-  dialogClass: "modal-dialog"
+  dialogClass: "modal-dialog modal-dialog-centered"
 });
 
 $(".confirm-flushlogs").confirm({
@@ -80,7 +80,7 @@ $(".confirm-flushlogs").confirm({
   post: true,
   confirmButtonClass: "btn-danger",
   cancelButtonClass: "btn-success",
-  dialogClass: "modal-dialog"
+  dialogClass: "modal-dialog modal-dialog-centered"
 });
 
 $(".confirm-flusharp").confirm({
@@ -97,7 +97,7 @@ $(".confirm-flusharp").confirm({
   post: true,
   confirmButtonClass: "btn-warning",
   cancelButtonClass: "btn-success",
-  dialogClass: "modal-dialog"
+  dialogClass: "modal-dialog modal-dialog-centered"
 });
 
 $(".confirm-disablelogging-noflush").confirm({
@@ -114,7 +114,7 @@ $(".confirm-disablelogging-noflush").confirm({
   post: true,
   confirmButtonClass: "btn-warning",
   cancelButtonClass: "btn-success",
-  dialogClass: "modal-dialog"
+  dialogClass: "modal-dialog modal-dialog-centered"
 });
 
 $(".api-token").confirm({
@@ -132,7 +132,7 @@ $(".api-token").confirm({
   post: true,
   confirmButtonClass: "btn-danger",
   cancelButtonClass: "btn-success",
-  dialogClass: "modal-dialog"
+  dialogClass: "modal-dialog modal-dialog-centered"
 });
 
 $("#DHCPchk").click(function () {
@@ -229,7 +229,7 @@ $(document).ready(function () {
   var alInfo = $("#alInfo");
   if (alInfo.length > 0) {
     alInfo.delay(3000).fadeOut(2000, function () {
-      alInfo.hide();
+      alInfo.addClass("d-none");
     });
   }
 

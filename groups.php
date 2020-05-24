@@ -8,23 +8,20 @@
     require "scripts/pi-hole/php/header.php";
 ?>
 
-<!-- Title -->
-<div class="page-header">
-    <h1>Group management</h1>
+<div class="row pt-4 mb-3">
+    <div class="col-sm-12">
+        <h1>Group management</h1>
+    </div>
 </div>
 
 <!-- Group Input -->
-<div class="row">
+<div class="row mb-3">
     <div class="col-md-12">
-        <div class="box" id="add-group">
-            <!-- /.box-header -->
-            <div class="box-header with-border">
-                <h3 class="box-title">
-                    Add a new group
-                </h3>
+        <div class="card card-outline card-secondary" id="add-group">
+            <div class="card-header">
+                <h3 class="card-title">Add a new group</h3>
             </div>
-            <!-- /.box-header -->
-            <div class="box-body">
+            <div class="card-body">
                 <div class="row">
                     <div class="form-group col-md-6">
                         <label for="new_name">Name:</label>
@@ -36,38 +33,34 @@
                     </div>
                 </div>
             </div>
-            <div class="box-footer clearfix">
-                <button type="button" id="btnAdd" class="btn btn-primary pull-right">Add</button>
+            <div class="card-footer d-flex justify-content-md-end">
+                <button type="button" id="btnAdd" class="btn btn-primary">Add</button>
             </div>
         </div>
     </div>
 </div>
+
 <div class="row">
     <div class="col-md-12">
-        <div class="box" id="groups-list">
-            <div class="box-header with-border">
-                <h3 class="box-title">
-                    List of configured groups
-                </h3>
+        <div class="card card-outline card-secondary" id="groups-list">
+            <div class="card-header">
+                <h3 class="card-title">List of configured groups</h3>
             </div>
-            <!-- /.box-header -->
-            <div class="box-body">
-                <table id="groupsTable" class="display table table-striped table-bordered" cellspacing="0" width="100%">
+            <div class="card-body">
+                <table id="groupsTable" class="display table table-striped table-bordered w-100">
                     <thead>
-                    <tr>
-                        <th>ID</th>
-                        <th>Name</th>
-                        <th>Status</th>
-                        <th>Description</th>
-                        <th>Action</th>
-                    </tr>
+                        <tr>
+                            <th>ID</th>
+                            <th>Name</th>
+                            <th>Status</th>
+                            <th>Description</th>
+                            <th>Action</th>
+                        </tr>
                     </thead>
                 </table>
-                <button type="button" id="resetButton" class="btn btn-default btn-sm text-red hidden">Reset sorting</button>
+                <button type="button" id="resetButton" class="btn btn-light btn-sm text-red d-none">Reset sorting</button>
             </div>
-            <!-- /.box-body -->
         </div>
-        <!-- /.box -->
     </div>
 </div>
 
@@ -75,5 +68,5 @@
 <script src="scripts/pi-hole/js/groups.js"></script>
 
 <?php
-require "scripts/pi-hole/php/footer.php";
+    require "scripts/pi-hole/php/footer.php";
 ?>

@@ -99,11 +99,6 @@
     }
 }
 
-.main-header > .navbar,
-.navbar > .sidebar-toggle {
-  height: 50px;
-}
-
 #resetButton {
 	font-weight: 700;
 }
@@ -239,30 +234,7 @@
     text-decoration: line-through !important;
 }
 
-.fa-paypal-icon {
-    width: 18px;
-    margin-left: 2px;
-}
-
-.sidebar-toggle:before {
-    font-weight: 900;
-    font-family: "Font Awesome 5 Free";
-}
-
 /* Utilities */
-.text-underline {
-    text-decoration: underline;
-}
-
-.breakall {
-    white-space: -moz-pre-wrap;
-    white-space: -pre-wrap;
-    white-space: -o-pre-wrap;
-    white-space: pre-wrap;
-    word-break: break-all;
-    word-wrap: break-word; /* Internet Explorer 5.5+ */
-}
-
 .pointer {
     cursor: pointer;
 }
@@ -274,14 +246,4 @@
 
 .input-group-addon {
 	padding: 0 12px;
-}
-
-.user-panel > .info > span {
-    padding-right: 5px;
-    margin-top: 3px;
-    font-size: 11px;
-}
-
-.user-panel > .info i {
-    margin-right: 3px;
 }

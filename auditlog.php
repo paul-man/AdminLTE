@@ -9,19 +9,20 @@
 ?>
 <!-- Send PHP info to JS -->
 <div id="token" hidden><?php echo $token ?></div>
-<!-- Title -->
-<div class="page-header">
-    <h1>Audit log (showing live data)</h1>
+
+<div class="row pt-4 mb-3">
+    <div class="col-sm-12">
+        <h1>Audit log (showing live data)</h1>
+    </div>
 </div>
 
 <div class="row">
-    <div class="col-xs-12 col-lg-6">
-      <div class="box" id="domain-frequency">
-        <div class="box-header with-border">
-          <h3 class="box-title">Allowed queries</h3>
+    <div class="col-md-6">
+      <div class="card card-outline card-secondary" id="domain-frequency">
+        <div class="card-header">
+          <h3 class="card-title">Allowed queries</h3>
         </div>
-        <!-- /.box-header -->
-        <div class="box-body">
+        <div class="card-body">
             <div class="table-responsive">
                 <table class="table table-bordered">
                   <tbody>
@@ -35,21 +36,17 @@
             </div>
         </div>
         <div class="overlay">
-          <i class="fa fa-sync fa-spin"></i>
+          <i class="fas fa-2x fa-sync fa-spin"></i>
         </div>
-        <!-- /.box-body -->
       </div>
-      <!-- /.box -->
     </div>
     <!-- /.col -->
-
-    <div class="col-xs-12 col-lg-6">
-      <div class="box" id="ad-frequency">
-        <div class="box-header with-border">
-          <h3 class="box-title">Blocked queries</h3>
+    <div class="col-md-6">
+      <div class="card card-outline card-secondary" id="ad-frequency">
+        <div class="card-header">
+          <h3 class="card-title">Blocked queries</h3>
         </div>
-        <!-- /.box-header -->
-        <div class="box-body">
+        <div class="card-body">
             <div class="table-responsive">
                 <table class="table table-bordered">
                   <tbody>
@@ -63,11 +60,9 @@
             </div>
         </div>
         <div class="overlay">
-          <i class="fa fa-sync fa-spin"></i>
+          <i class="fas fa-2x fa-sync fa-spin"></i>
         </div>
-        <!-- /.box-body -->
       </div>
-      <!-- /.box -->
     </div>
     <!-- /.col -->
 </div>
