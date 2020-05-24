@@ -142,7 +142,7 @@ $token = $_SESSION['token'];
           <h3 class="card-title">Recent Queries</h3>
         </div>
         <div class="card-body">
-            <table id="all-queries" class="display table table-striped table-bordered w-100">
+            <table id="all-queries" class="table table-striped table-bordered w-100">
                 <thead>
                     <tr>
                         <th>Time</th>

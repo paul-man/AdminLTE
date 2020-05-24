@@ -50,7 +50,7 @@
                 <h3 class="card-title">List of configured clients</h3>
             </div>
             <div class="card-body">
-                <table id="clientsTable" class="display table table-striped table-bordered w-100">
+                <table id="clientsTable" class="table table-striped table-bordered w-100">
                     <thead>
                         <tr>
                             <th>ID</th>

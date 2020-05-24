@@ -56,7 +56,7 @@
                 </h3>
             </div>
             <div class="card-body">
-                <table id="adlistsTable" class="display table table-striped table-bordered w-100">
+                <table id="adlistsTable" class="table table-striped table-bordered w-100">
                     <thead>
                         <tr>
                             <th>ID</th>

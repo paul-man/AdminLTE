@@ -19,7 +19,7 @@
     <div class="col-md-12">
         <div class="card card-outline card-secondary" id="messages-list">
             <div class="card-body">
-                <table id="messagesTable" class="display table table-striped table-bordered w-100">
+                <table id="messagesTable" class="table table-striped table-bordered w-100">
                     <thead>
                     <tr>
                         <th>ID</th>

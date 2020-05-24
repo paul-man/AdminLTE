@@ -121,7 +121,7 @@ if(strlen($showing) > 0)
           <h3 class="card-title">Recent Queries <?php echo $showing; ?></h3>
         </div>
         <div class="card-body">
-            <table id="all-queries" class="display table table-striped table-bordered w-100">
+            <table id="all-queries" class="table table-striped table-bordered w-100">
                 <thead>
                     <tr>
                         <th>Time</th>

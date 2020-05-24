@@ -47,7 +47,7 @@
                 <h3 class="card-title">List of configured groups</h3>
             </div>
             <div class="card-body">
-                <table id="groupsTable" class="display table table-striped table-bordered w-100">
+                <table id="groupsTable" class="table table-striped table-bordered w-100">
                     <thead>
                         <tr>
                             <th>ID</th>

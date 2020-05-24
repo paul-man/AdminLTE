@@ -109,7 +109,7 @@
                 <h3 class="card-title">List of <?php echo $adjective; ?> entries</h3>
             </div>
             <div class="card-body">
-                <table id="domainsTable" class="display table table-striped table-bordered w-100">
+                <table id="domainsTable" class="table table-striped table-bordered w-100">
                     <thead>
                         <tr>
                             <th>ID</th>

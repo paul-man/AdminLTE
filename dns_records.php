@@ -80,7 +80,7 @@
                 <h3 class="card-title">List of local DNS domains</h3>
             </div>
             <div class="card-body">
-                <table id="customDNSTable" class="display table table-striped table-bordered w-100">
+                <table id="customDNSTable" class="table table-striped table-bordered w-100">
                     <thead>
                         <tr>
                             <th>Domain</th>
