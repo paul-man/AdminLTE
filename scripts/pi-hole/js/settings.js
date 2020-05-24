@@ -137,7 +137,7 @@ $(".api-token").confirm({
 
 $("#DHCPchk").click(function () {
   $("input.DHCPgroup").prop("disabled", !this.checked);
-  $("#dhcpnotice").prop("hidden", !this.checked).addClass("lookatme");
+  $("#dhcpnotice").prop("hidden", !this.checked).addClass("animated infinite text-red lookatme");
 });
 
 function loadCacheInfo() {
@@ -154,9 +154,9 @@ function loadCacheInfo() {
     var cachelivefreed = parseInt(data.cacheinfo["cache-live-freed"]);
     $("#cache-live-freed").text(cachelivefreed);
     if (cachelivefreed > 0) {
-      $("#cache-live-freed").parent("tr").addClass("lookatme");
+      $("#cache-live-freed").parent("tr").addClass("animated infinite text-red lookatme");
     } else {
-      $("#cache-live-freed").parent("tr").removeClass("lookatme");
+      $("#cache-live-freed").parent("tr").removeClass("animated infinite text-red lookatme");
     }
 
     // Update cache info every 10 seconds

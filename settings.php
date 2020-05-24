@@ -1147,7 +1147,7 @@ if (isset($_GET['tab']) && in_array($_GET['tab'], array("sysadmin", "adlists", "
                                                 <input type="radio" name="privacylevel" id="privacylevel_4" value="4" <?php if ($privacylevel === 4){ ?>checked<?php } ?>>&nbsp;<label for="privacylevel_4">No Statistics mode: This disables all statistics processing.</label><p>Even the query counters will not be available. <strong>Note that regex blocking is not available when query analyzing is disabled.</strong> Additionally, you can disable logging to the file <code>/var/log/pihole.log</code> using <code>sudo pihole logging off</code>.</p>
                                                 <p>The privacy level may be increased at any time without having to restart the DNS resolver. However, note that the DNS resolver needs to be restarted when lowering the privacy level. This restarting is automatically done when saving.</p>
                                                 <?php if($privacylevel > 0 && $piHoleLogging){ ?>
-                                                <p class="lookatme">Warning: Pi-hole's query logging is activated. Although the dashboard will hide the requested details, all queries are still fully logged to the pihole.log file.</p>
+                                                <p class="animated infinite text-red lookatme">Warning: Pi-hole's query logging is activated. Although the dashboard will hide the requested details, all queries are still fully logged to the pihole.log file.</p>
                                                 <?php } ?>
                                             </div>
                                         </div>
